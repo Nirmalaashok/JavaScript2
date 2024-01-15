@@ -14,7 +14,7 @@ const monday = [
     duration: 20,
   },
   {
-    name: 'Talk to a lot of people',
+    name: 'Talk to a lot of people!',
     duration: 200,
   },
 ];
