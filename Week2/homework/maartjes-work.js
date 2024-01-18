@@ -45,25 +45,20 @@ const tuesday = [
 const maartjesTasks = monday.concat(tuesday);
 const maartjesHourlyRate = 20;
 
-//function computeEarnings(tasks, hourlyRate) {
-  // Replace this comment and the next line with your code
-  
-//  console.log(tasks, hourlyRate);
-//}
-
-function computeEarnings(tasks, hourlyRate){
-const computeEarnings = (tasks, hourlyRate) => {
-  const durationsInHours = maartjesTasks.map(task => task.duration / 60);
-  const filteredHours = durationsInHours.filter(hour => hour >= 2);
-  const totalEarnings = filteredHours.reduce((acc, cv) => acc + cv * hourlyRate, 0);
-  return totalEarnings;
-} };
+function computeEarnings(tasks, hourlyRate) {
+  return (
+    tasks
+      .map(task => task.duration / 60)
+      .filter(hour => hour >= 2)
+      // eslint-disable-next-line no-return-assign
+      .reduce((acc, cv) => (acc += cv * hourlyRate), 0)
+  );
+}
 
 // eslint-disable-next-line no-unused-vars
-const earnings = computeEarnings(maartjesTasks, maartjesHourlyRate);
-//two decimal
-console.log(`Maartje has earned: €${maartjesEarnings.toFixed(2)}`);
+const maartjesearnings = computeEarnings(maartjesTasks, maartjesHourlyRate);
 
+console.log(`Maartje has earned: €{maartjesearnings.toFixed(2)}`);
 
 // Do not change or remove anything below this line
 module.exports = {
