@@ -6,3 +6,4 @@ describe('map_filter', () => {
     expect(result).toEqual([2, 6]);
   });
 });
+ 

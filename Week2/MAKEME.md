@@ -19,20 +19,28 @@ _Deadline Wednesday_
 Your solution could be something like this:
 
 ```js
-function doubleOddNumbers(numbers) {
-  const newNumbers = [];
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] % 2 !== 0) {
-      newNumbers.push(numbers[i] * 2);
-    }
-  }
-  return newNumbers;
-}
+//function doubleOddNumbers(numbers) {
+ // const newNumbers = [];
+  //for (let i = 0; i < numbers.length; i++) {
+    //if (numbers[i] % 2 !== 0) {
+   //   newNumbers.push(numbers[i] * 2);
+  //  }
+ // }
+ // return newNumbers;
+//}
 
-const myNumbers = [1, 2, 3, 4];
-console.log(doubleOddNumbers(myNumbers)); // ==> [2, 6]
+//const myNumbers = [1, 2, 3, 4];
+//console.log(doubleOddNumbers(myNumbers)); // ==> [2, 6]
 ```
 
+// Pass a function to map
+function doubleOddNumbers(){
+const numbers = [1,3,5,7,9,11]
+const doubled = numbers.map((number)=> number*2); // function inside array map is copying numbers values
+  return doubled
+}
+const result = doubleOddNumbers()
+console.log(result);
 Rewrite the above `doubleOddNumbers` function using `map` and `filter`; don't forget to use `=>`.
 
 ---
