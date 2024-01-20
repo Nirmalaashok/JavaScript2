@@ -45,16 +45,15 @@ const tuesday = [
 const maartjesTasks = monday.concat(tuesday);
 const maartjesHourlyRate = 20;
 
-function computeEarnings(tasks, hourlyRate) {
-  return (
-    tasks
-      .map(task => task.duration / 60)
-      .filter(hour => hour >= 2)
-      // eslint-disable-next-line no-return-assign
-      .reduce((acc, cv) => (acc += cv * hourlyRate), 0)
-  );
-}
+const convertToHours = task => task.duration / 60;
+const filterTasksWith2Hours = hour => hour >= 2;
 
+function computeEarnings(tasks, hourlyRate) {
+  return tasks
+    .map(convertToHours)
+    .filter(filterTasksWith2Hours)
+    .reduce((acc, cv) => acc + cv * hourlyRate, 0);
+}
 // eslint-disable-next-line no-unused-vars
 const maartjesearnings = computeEarnings(maartjesTasks, maartjesHourlyRate);
 
