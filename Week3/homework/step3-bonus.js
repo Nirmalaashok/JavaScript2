@@ -3,8 +3,11 @@
 const values = ['a', 'b', 'c', 'd', 'a', 'e', 'f', 'c'];
 
 function makeUnique(arr) {
-  // Replace this comment and the next line with your code
   console.log(arr);
+  const outputArray = arr.filter(function(v, i, self) {
+    return i === self.indexOf(v);
+  });
+  return outputArray; // Return the modified array with duplicates removed
 }
 
 const uniqueValues = makeUnique(values);

@@ -21,3 +21,5 @@ f2(y);
 console.log(y);
 
 // Add your explanation as a comment here
+// variable x is a primitive date type number when function f1 inside val it will not affect  the original value of x
+// variable y is object  when passes to f2 function  so it will affect the original value of x
